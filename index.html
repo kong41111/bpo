@@ -100,6 +100,11 @@
   .name { font-weight: 600; font-size: 14px; line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; word-break: break-word; }
   .name.dim { color: var(--muted); font-weight: 400; font-style: italic; }
   .meta { font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .price { margin-top: auto; padding-top: 3px; font: 700 16px/1.2 var(--head); color: #d45a00; }
+  .price small { font: 400 11px var(--body); color: var(--muted); }
+  .price.none { font: 400 12px var(--body); color: var(--muted); }
+  .v-price { font: 700 20px/1.3 var(--head); color: #ffa05c; margin-top: 2px; }
+  .v-opts { font: 400 13px/1.5 var(--body); color: #ffd2b0; }
   .empty { text-align: center; color: var(--muted); padding: 60px 0; }
   .empty b { display: block; font: 700 18px var(--head); color: var(--ink); margin-bottom: 4px; }
   mark { background: #ffe3b3; color: inherit; border-radius: 2px; }
@@ -138,6 +143,7 @@
   .fab { position: fixed; right: 16px; bottom: 16px; z-index: 30; border: 0; border-radius: 999px; background: var(--accent); color: #fff; padding: 12px 18px; font: 700 15px/1 var(--head); cursor: pointer; box-shadow: 0 6px 20px rgba(255,122,26,.45); display: flex; align-items: center; gap: 8px; }
   .fab[hidden] { display: none; }
   .fab .n { background: #fff; color: var(--accent); border-radius: 999px; padding: 3px 7px; font-size: 13px; }
+  .fab .t:not(:empty) { border-left: 1px solid rgba(255,255,255,.5); padding-left: 9px; font-size: 16px; }
   .cart-bg { position: fixed; inset: 0; z-index: 40; background: rgba(6,14,24,.45); }
   .cart { position: fixed; top: 0; right: 0; bottom: 0; z-index: 45; width: min(440px, 100%); background: var(--bg); display: flex; flex-direction: column; box-shadow: -8px 0 30px rgba(0,0,0,.2); }
   .cart[hidden], .cart-bg[hidden] { display: none; }
@@ -218,6 +224,8 @@
         <option value="cat">ตามหมวดหมู่</option>
         <option value="date">อัปเดตล่าสุด</option>
         <option value="name">ชื่อ ก–ฮ / A–Z</option>
+        <option value="price">ราคา ต่ำ → สูง</option>
+        <option value="price-desc">ราคา สูง → ต่ำ</option>
       </select>
     </label>
   </div>
@@ -238,6 +246,7 @@
   </div>
   <div class="v-info">
     <div class="v-name" id="vName"></div>
+    <div class="v-price" id="vPrice"></div>
     <div class="v-path" id="vPath"></div>
     <div class="v-actions">
       <button id="vAdd" class="primary">+ ใส่ตะกร้า</button>
@@ -247,7 +256,7 @@
   </div>
 </div>
 
-<button class="fab" id="fab" hidden aria-label="เปิดตะกร้า">🛒 ตะกร้า <span class="n" id="fabN">0</span></button>
+<button class="fab" id="fab" hidden aria-label="เปิดตะกร้า">🛒 ตะกร้า <span class="n" id="fabN">0</span><span class="t" id="fabT"></span></button>
 <div class="cart-bg" id="cartBg" hidden></div>
 <aside class="cart" id="cart" hidden role="dialog" aria-modal="true" aria-label="ตะกร้าสั่งของ">
   <div class="c-head">
@@ -269,7 +278,7 @@
 </aside>
 <div class="toast" id="toast" hidden></div>
 
-<script src="data/products.js?v=202609111134"></script>
+<script src="data/products.js?v=202609111512"></script>
 <script>
 (() => {
   const D = window.BPO_DATA;
@@ -375,9 +384,19 @@
     const meta = [p.type, p.sub].filter(Boolean).join(" · ");
     return `<div class="card" data-i="${p.idx}" tabindex="0" role="button">
       <div class="thumb"><img loading="lazy" src="${thumbUrl(p)}" alt="${esc(p.label)}" data-id="${p.id}"><span class="badges">${SPECIAL.filter((m) => p[m.flag]).map((m) => `<span class="badge ${m.cls}">${m.badge}</span>`).join("")}</span>${addBtn(p.id)}</div>
-      <div class="info"><div class="name${p.noname ? " dim" : ""}">${highlight(p.label, terms)}</div><div class="meta">${esc(meta)}</div></div>
+      <div class="info"><div class="name${p.noname ? " dim" : ""}">${highlight(p.label, terms)}</div><div class="meta">${esc(meta)}</div>${priceHtml(p)}</div>
     </div>`;
   }
+  // ราคาที่แสดง: ราคาเดียว "280 ฿" หรือหลายรุ่น "118 – 144 ฿"
+  function priceRange(p) {
+    const list = p.options ? p.options.map((o) => o.price) : p.price != null ? [p.price] : [];
+    if (!list.length) return "";
+    const lo = Math.min(...list), hi = Math.max(...list);
+    return lo === hi ? `${money(lo)} ฿` : `${money(lo)} – ${money(hi)} ฿`;
+  }
+  const priceHtml = (p) => priceRange(p)
+    ? `<div class="price">${priceRange(p)}${p.options ? ` <small>${p.options.length} รุ่น</small>` : ""}</div>`
+    : `<div class="price none">ดูราคาในรูป</div>`;
   function addBtn(id) {
     const n = qtyInCart(id);
     return `<button class="add${n ? " in" : ""}" data-add="${id}" aria-label="ใส่ตะกร้า" title="ใส่ตะกร้า">${n ? "🛒" + n : "+"}</button>`;
@@ -396,6 +415,12 @@
       collator.compare(a.sub, b.sub) || collator.compare(a.label, b.label);
     if (state.sort === "date") visible.sort((a, b) => (b.date || "").localeCompare(a.date || "") || byCat(a, b));
     else if (state.sort === "name") visible.sort((a, b) => collator.compare(a.label, b.label));
+    else if (state.sort.startsWith("price")) {
+      // สินค้าที่ยังไม่มีราคาอยู่ท้ายสุดเสมอ
+      const low = (p) => p.options ? Math.min(...p.options.map((o) => o.price)) : p.price;
+      const dir = state.sort === "price-desc" ? -1 : 1;
+      visible.sort((a, b) => (low(a) == null) - (low(b) == null) || dir * ((low(a) ?? 0) - (low(b) ?? 0)) || byCat(a, b));
+    }
     else visible.sort(byCat);
 
     const where = special(state.g) ? special(state.g).name.replace("★ ", "") : state.g || "ทุกหมวด";
@@ -457,6 +482,11 @@
     full.onload = () => { if (vlist[cur] === p) img.src = full.src; };
     full.src = driveThumb(p, 1600);
     $("vName").textContent = p.label;
+    $("vPrice").innerHTML = priceRange(p)
+      ? `ราคาส่ง ${esc(priceRange(p))}` +
+        (p.options ? `<div class="v-opts">${p.options.map((o) => `${esc(o.name)} ${money(o.price)} ฿`).join(" · ")}</div>` : "") +
+        (p.note ? `<div class="v-opts">${esc(p.note)}</div>` : "")
+      : "";
     $("vPath").textContent = [p.group, p.type, p.sub].filter(Boolean).join(" › ") + (p.date ? ` · อัปเดต ${fmtDate(p.date)}` : "");
     $("vCount").textContent = `${cur + 1} / ${vlist.length}`;
     $("vDrive").href = `https://drive.google.com/file/d/${p.id}/view`;
@@ -496,7 +526,7 @@
   function addToCart(p) {
     const line = cart.find((l) => l.id === p.id && !l.variant);
     if (line) line.qty = (num(line.qty) || 0) + 1;
-    else cart.push({ id: p.id, name: orderName(p), variant: "", qty: 1, price: lastPrice[p.id] ?? "" });
+    else cart.push({ id: p.id, name: orderName(p), variant: "", qty: 1, price: p.price ?? lastPrice[p.id] ?? "" });
     saveCart();
     renderCartList();
     refreshAddButtons();
@@ -530,7 +560,8 @@
         <img src="${p ? thumbUrl(p) : ""}" data-id="${esc(l.id)}" data-zoom alt="">
         <div class="l-name">${esc(l.name)}</div>
         <button class="l-del" data-del aria-label="ลบรายการนี้">×</button>
-        <input class="l-variant" data-f="variant" value="${esc(l.variant)}" placeholder="รุ่น / สี / ขนาด (ถ้ามี)">
+        <input class="l-variant" data-f="variant" value="${esc(l.variant)}" placeholder="${p?.options ? "เลือกรุ่น (แตะเพื่อดูรายการ)" : "รุ่น / สี / ขนาด (ถ้ามี)"}"${p?.options ? ` list="dl-${i}"` : ""}>
+        ${p?.options ? `<datalist id="dl-${i}">${p.options.map((o) => `<option value="${esc(o.name)}">${money(o.price)} ฿</option>`).join("")}</datalist>` : ""}
         <div class="l-row">
           <div class="step"><button data-step="-1" aria-label="ลด">−</button><input data-f="qty" value="${esc(l.qty)}" inputmode="numeric" aria-label="จำนวน"><button data-step="1" aria-label="เพิ่ม">+</button></div>
           x <input class="l-price" data-f="price" value="${esc(l.price)}" inputmode="decimal" placeholder="ราคา" aria-label="ราคาต่อชิ้น"> ฿
@@ -555,6 +586,7 @@
     const pieces = cart.reduce((a, l) => a + (num(l.qty) || 0), 0);
     $("fab").hidden = !cart.length;
     $("fabN").textContent = money(pieces);
+    $("fabT").textContent = s.total ? `${money(s.total)} ฿` : "";
   }
   function refreshAddButtons() {
     document.querySelectorAll("#list [data-add]").forEach((b) => { b.outerHTML = addBtn(b.dataset.add); });
@@ -584,8 +616,11 @@
   $("vAdd").addEventListener("click", () => { addToCart(vlist[cur]); updateViewerAdd(); });
   $("cList").addEventListener("input", (e) => {
     const f = e.target.dataset.f; if (!f) return;
-    const l = cart[+e.target.closest(".line").dataset.l];
+    const row = e.target.closest(".line"), l = cart[+row.dataset.l];
     l[f] = e.target.value;
+    // เลือกรุ่นที่มีราคากำหนดไว้ -> ใส่ราคาให้เอง
+    const opt = f === "variant" && byId.get(l.id)?.options?.find((o) => o.name === l.variant.trim());
+    if (opt) { l.price = opt.price; row.querySelector('[data-f="price"]').value = money(opt.price).replace(/,/g, ""); }
     if (f === "price" && !isNaN(num(l.price))) { lastPrice[l.id] = l.price; store.set("bpo-prices", lastPrice); }
     saveCart(); updateCartTotals();
   });
