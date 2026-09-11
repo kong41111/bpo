@@ -1,9 +1,9 @@
 {
  "shop": "BPO",
  "source": "https://drive.google.com/drive/folders/1V_dH7noHiDZhiVaXG6czkIURU9CmsvZu",
- "updated": "2026-09-11 10:19",
+ "updated": "2026-09-11 10:48",
  "localImages": true,
- "total": 1034,
+ "total": 1035,
  "groups": [
   {
    "name": "คันเบ็ด",
@@ -81,7 +81,7 @@
   },
   {
    "name": "เหยื่อปลอม",
-   "count": 528,
+   "count": 529,
    "types": [
     {
      "name": "กบยางที่สั่งได้เลย",
@@ -137,7 +137,7 @@
     },
     {
      "name": "เหยื่อยางฉีด",
-     "count": 78
+     "count": 79
     },
     {
      "name": "เหยื่อเพนซิล",
@@ -11700,6 +11700,18 @@
    "sub": "",
    "new": false,
    "date": "2025-04-03"
+  },
+  {
+   "id": "1NYfoJUX6J1_Nbw4Ms_ZCY1PQ31OfAu9k",
+   "name": "LUGAMESTORM",
+   "noname": false,
+   "file": "LUGAMESTORM.jpg",
+   "group": "เหยื่อปลอม",
+   "folder": "เหยื่อปลอม",
+   "type": "เหยื่อยางฉีด",
+   "sub": "",
+   "new": false,
+   "date": "2026-09-11"
   },
   {
    "id": "1_d9W4uHqiZO6e-VgmRFDDjxK28h1yEwo",
