@@ -6,11 +6,11 @@
 <title>BPO — รายการสินค้าราคาส่ง</title>
 <meta name="description" content="รายการสินค้าอุปกรณ์ตกปลาราคาส่ง ร้าน BPO — คันเบ็ด รอก สาย เหยื่อปลอม กบยาง ตัวเบ็ด และอุปกรณ์เสริม">
 <meta property="og:title" content="BPO — รายการสินค้าราคาส่ง">
-<meta property="og:description" content="อุปกรณ์ตกปลาราคาส่ง แยกหมวดหมู่ ค้นหาได้ อัปเดตจากรูปสินค้าล่าสุด">
+<meta property="og:description" content="รายการสินค้าอุปกรณ์ตกปลาราคาส่ง ร้าน BPO — คันเบ็ด รอก สาย เหยื่อปลอม กบยาง ตัวเบ็ด และอุปกรณ์เสริม">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://kong41111.github.io/bpo/">
 <meta name="theme-color" content="#0c2340">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230c2340'/%3E%3Ctext x='32' y='41' font-family='Arial' font-weight='900' font-size='22' fill='white' text-anchor='middle'%3EBPO%3C/text%3E%3Crect x='14' y='47' width='36' height='4' rx='2' fill='%23ff7a1a'/%3E%3C/svg%3E">
+<link rel="icon" id="favicon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@500;700;800&family=Sarabun:wght@400;600&display=swap" rel="stylesheet">
@@ -92,11 +92,12 @@
   .card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(12,35,64,.12); }
   .card:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
   .thumb { position: relative; aspect-ratio: 1; background: #e9edf2; }
-  .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .thumb img { width: 100%; height: 100%; object-fit: contain; display: block; background: #fff; }
   .badges { position: absolute; top: 8px; left: 8px; display: flex; gap: 4px; }
   .badge { background: var(--accent); color: #fff; font: 700 11px/1 var(--head); padding: 5px 7px; border-radius: 6px; letter-spacing: .03em; }
   .badge.open { background: var(--open); }
   .info { padding: 8px 10px 10px; display: flex; flex-direction: column; gap: 2px; min-height: 64px; }
+  .code { font: 700 11px/1.2 var(--head); color: var(--navy-2); background: #e8eef6; align-self: flex-start; padding: 2px 6px; border-radius: 4px; margin-bottom: 2px; }
   .name { font-weight: 600; font-size: 14px; line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; word-break: break-word; }
   .name.dim { color: var(--muted); font-weight: 400; font-style: italic; }
   .meta { font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -202,11 +203,11 @@
 <header class="top">
   <div class="bar">
     <a class="brand" href="#" data-home>
-      <span class="logo">BPO</span>
+      <span class="logo" id="logo"></span>
       <span><b>รายการสินค้าราคาส่ง</b><small id="subtitle"></small></span>
     </a>
     <div class="search">
-      <input id="q" type="search" placeholder="ค้นหาสินค้า เช่น กบยาง, AIRGEAR, รอกหยดน้ำ" autocomplete="off" aria-label="ค้นหาสินค้า">
+      <input id="q" type="search" placeholder="ค้นหาชื่อสินค้า ยี่ห้อ หรือรหัสสินค้า" autocomplete="off" aria-label="ค้นหาสินค้า">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
       <button class="clear" id="clear" hidden aria-label="ล้างคำค้น">×</button>
     </div>
@@ -278,7 +279,7 @@
 </aside>
 <div class="toast" id="toast" hidden></div>
 
-<script src="data/products.js?v=202609111512"></script>
+<script src="data/products.js?v=202609111537"></script>
 <script>
 (() => {
   const D = window.BPO_DATA;
@@ -297,7 +298,7 @@
   const products = D.products.map((p, i) => ({
     ...p, idx: i,
     label: p.noname ? `${p.type} (ไม่มีชื่อ)` : p.name,
-    hay: [p.name, p.file, p.type, p.sub, p.folder, p.group].join(" ").toLowerCase(),
+    hay: [p.code, p.name, p.file, p.type, p.sub, p.folder, p.group].join(" ").toLowerCase(),
   }));
   const groupOrder = D.groups.map((g) => g.name);
   const typeOrder = D.groups.flatMap((g) => g.types.map((t) => g.name + "|" + t.name));
@@ -384,7 +385,7 @@
     const meta = [p.type, p.sub].filter(Boolean).join(" · ");
     return `<div class="card" data-i="${p.idx}" tabindex="0" role="button">
       <div class="thumb"><img loading="lazy" src="${thumbUrl(p)}" alt="${esc(p.label)}" data-id="${p.id}"><span class="badges">${SPECIAL.filter((m) => p[m.flag]).map((m) => `<span class="badge ${m.cls}">${m.badge}</span>`).join("")}</span>${addBtn(p.id)}</div>
-      <div class="info"><div class="name${p.noname ? " dim" : ""}">${highlight(p.label, terms)}</div><div class="meta">${esc(meta)}</div>${priceHtml(p)}</div>
+      <div class="info">${p.code ? `<div class="code">${highlight(p.code, terms)}</div>` : ""}<div class="name${p.noname ? " dim" : ""}">${highlight(p.label, terms)}</div><div class="meta">${esc(meta)}</div>${priceHtml(p)}</div>
     </div>`;
   }
   // ราคาที่แสดง: ราคาเดียว "280 ฿" หรือหลายรุ่น "118 – 144 ฿"
@@ -412,7 +413,7 @@
     const byCat = (a, b) =>
       groupOrder.indexOf(a.group) - groupOrder.indexOf(b.group) ||
       typeOrder.indexOf(a.group + "|" + a.type) - typeOrder.indexOf(b.group + "|" + b.type) ||
-      collator.compare(a.sub, b.sub) || collator.compare(a.label, b.label);
+      collator.compare(a.sub, b.sub) || collator.compare(a.code || a.label, b.code || b.label);
     if (state.sort === "date") visible.sort((a, b) => (b.date || "").localeCompare(a.date || "") || byCat(a, b));
     else if (state.sort === "name") visible.sort((a, b) => collator.compare(a.label, b.label));
     else if (state.sort.startsWith("price")) {
@@ -481,7 +482,7 @@
     const full = new Image();          // แล้วค่อยเปลี่ยนเป็นรูปชัดจาก Drive
     full.onload = () => { if (vlist[cur] === p) img.src = full.src; };
     full.src = driveThumb(p, 1600);
-    $("vName").textContent = p.label;
+    $("vName").textContent = [p.code, p.label].filter(Boolean).join("  ");
     $("vPrice").innerHTML = priceRange(p)
       ? `ราคาส่ง ${esc(priceRange(p))}` +
         (p.options ? `<div class="v-opts">${p.options.map((o) => `${esc(o.name)} ${money(o.price)} ฿`).join(" · ")}</div>` : "") +
@@ -520,7 +521,7 @@
   const lastPrice = store.get("bpo-prices", {});   // จำราคาที่เคยใส่ไว้ของแต่ละสินค้า
   const num = (v) => { const n = parseFloat(String(v).replace(/,/g, "")); return isFinite(n) ? n : NaN; };
   const money = (n) => n.toLocaleString("en-US", { maximumFractionDigits: 2 });
-  const orderName = (p) => p.noname ? `${p.type} (${p.name.slice(0, 20)})` : p.name;
+  const orderName = (p) => [p.code, p.noname ? `${p.type} (${p.name.slice(0, 20)})` : p.name].filter(Boolean).join(" ");
   const qtyInCart = (id) => cart.filter((l) => l.id === id).reduce((s, l) => s + (num(l.qty) || 0), 0);
 
   function addToCart(p) {
@@ -719,6 +720,11 @@
   readHash();
   $("q").value = state.q;
   $("sort").value = state.sort;
+  // ชื่อร้าน: โลโก้ ชื่อแท็บ และไอคอนแท็บ (ตัวอักษรแรกของชื่อร้าน)
+  $("logo").textContent = D.shop;
+  document.title = `${D.shop} — รายการสินค้าราคาส่ง`;
+  const mark = D.shop.split(/[.\s]/)[0].slice(0, 3);
+  $("favicon").href = "data:image/svg+xml," + encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='#0c2340'/><text x='32' y='41' font-family='Arial' font-weight='900' font-size='${mark.length > 2 ? 22 : 28}' fill='white' text-anchor='middle'>${esc(mark)}</text><rect x='14' y='47' width='36' height='4' rx='2' fill='#ff7a1a'/></svg>`);
   $("subtitle").textContent = `${D.total.toLocaleString()} รายการ · ${D.groups.length} หมวดหมู่`;
   $("footer").innerHTML = `ร้าน ${esc(D.shop)} · อัปเดตข้อมูลล่าสุด ${esc(D.updated)} · <a href="${esc(D.source)}" target="_blank" rel="noopener">โฟลเดอร์รูปใน Google Drive</a>`;
   render();
