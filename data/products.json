@@ -1,7 +1,7 @@
 {
  "shop": "BPO",
  "source": "https://drive.google.com/drive/folders/1V_dH7noHiDZhiVaXG6czkIURU9CmsvZu",
- "updated": "2026-10-31 17:46",
+ "updated": "2026-10-31 22:48",
  "localImages": false,
  "total": 964,
  "groups": [
@@ -12188,6 +12188,16 @@
    "open": false,
    "date": "2024-01-30",
    "price": 37.0,
+   "options": [
+    {
+     "name": "กิ้งกือ 6 สี (น้ำเงิน/เหลือง/แดง/เขียว/ส้ม/ดำ) ราคาปลีก 50 บาท/ซอง",
+     "price": 37.0
+    },
+    {
+     "name": "กิ้งกือ 2.8 นิ้ว 5 ตัว/ซอง ใช้เบ็ด 2/0-3/0 ราคาปลีก 55 บาท/ซอง",
+     "price": 37.0
+    }
+   ],
    "note": "ราคาต่อซอง / 50 ซอง 36 / 100 ซองขึ้นไป 35"
   },
   {
@@ -13694,7 +13704,126 @@
    "sub": "",
    "new": false,
    "open": false,
-   "date": "2026-06-16"
+   "date": "2026-06-16",
+   "options": [
+    {
+     "name": "ลูกปืน 2 กรัม",
+     "price": 100.0
+    },
+    {
+     "name": "ลูกปืน 3 กรัม",
+     "price": 100.0
+    },
+    {
+     "name": "ลูกปืน 4 กรัม",
+     "price": 100.0
+    },
+    {
+     "name": "ลูกปืน 5 กรัม",
+     "price": 100.0
+    },
+    {
+     "name": "ลูกปืน 6 กรัม",
+     "price": 100.0
+    },
+    {
+     "name": "ลูกปืน 7 กรัม",
+     "price": 100.0
+    },
+    {
+     "name": "ลูกปืน 8 กรัม",
+     "price": 100.0
+    },
+    {
+     "name": "ลูกปืน 10 กรัม",
+     "price": 100.0
+    },
+    {
+     "name": "ลูกปืน 13 กรัม",
+     "price": 100.0
+    },
+    {
+     "name": "ลูกปืน 15 กรัม",
+     "price": 100.0
+    },
+    {
+     "name": "ลูกปืน 18 กรัม",
+     "price": 100.0
+    },
+    {
+     "name": "ลูกปืน 20 กรัม",
+     "price": 100.0
+    },
+    {
+     "name": "ลูกปืน 25 กรัม",
+     "price": 100.0
+    },
+    {
+     "name": "ลูกปืน 27 กรัม",
+     "price": 100.0
+    },
+    {
+     "name": "ลูกปืน 32 กรัม",
+     "price": 100.0
+    },
+    {
+     "name": "ลูกปืน 40 กรัม",
+     "price": 100.0
+    },
+    {
+     "name": "ลูกปืน 50 กรัม",
+     "price": 100.0
+    },
+    {
+     "name": "ลูกปืน 60 กรัม",
+     "price": 100.0
+    },
+    {
+     "name": "ลูกปืน 70 กรัม",
+     "price": 100.0
+    },
+    {
+     "name": "ลูกปืน 100 กรัม",
+     "price": 128.0
+    },
+    {
+     "name": "ลูกปืน 200 กรัม",
+     "price": 138.0
+    },
+    {
+     "name": "มะเฟือง 20 กรัม",
+     "price": 100.0
+    },
+    {
+     "name": "มะเฟือง 30 กรัม",
+     "price": 100.0
+    },
+    {
+     "name": "มะเฟือง 40 กรัม",
+     "price": 100.0
+    },
+    {
+     "name": "มะเฟือง 50 กรัม",
+     "price": 100.0
+    },
+    {
+     "name": "มะเฟือง 60 กรัม",
+     "price": 100.0
+    },
+    {
+     "name": "มะเฟือง 70 กรัม",
+     "price": 100.0
+    },
+    {
+     "name": "มะเฟือง 90 กรัม",
+     "price": 100.0
+    },
+    {
+     "name": "มะเฟือง 100 กรัม",
+     "price": 100.0
+    }
+   ],
+   "note": "ราคาในตารางเป็นราคาส่งต่อกิโลกรัม (กิโลละ); หัวตาราง หน่วงลูกปืน ราคาส่ง 25 บาท / หน่วงมะเฟือง ราคาส่ง 15 บาท; ส่งต่อซอง 10 ชิ้น"
   },
   {
    "id": "16TTOdjsrivInYdADKd8UnI1yOTPCxVM7",
@@ -14392,7 +14521,9 @@
    "sub": "",
    "new": false,
    "open": false,
-   "date": "2026-10-31"
+   "date": "2026-10-31",
+   "price": 14.0,
+   "note": "ขายยกแพ็ค 20 อัน คละเบอร์ 1,2,3 (เบอร์1 ยาว33.8cm/ไซส์ใหญ่6.2cm, เบอร์2 ยาว34.5cm/ไซส์กลาง6.5cm, เบอร์3 ยาว35cm/ไซส์เล็ก7cm)"
   },
   {
    "id": "1HRoGs7z5oodjczBAhe6uYjjVI9064DIS",
@@ -14406,7 +14537,9 @@
    "sub": "",
    "new": false,
    "open": false,
-   "date": "2026-10-31"
+   "date": "2026-10-31",
+   "price": 15.0,
+   "note": "ขายยกแพ็ค 20 อัน คัดเบอร์ 1,2,3 (เบอร์1 ขนาด 41.4 cm, เบอร์2 ขนาด 42 cm, เบอร์3 ขนาด 42 cm)"
   },
   {
    "id": "1PRI4I1jjkv-QMwxy9yrefnn14pGfL1Pn",
@@ -14420,7 +14553,9 @@
    "sub": "",
    "new": false,
    "open": false,
-   "date": "2026-10-31"
+   "date": "2026-10-31",
+   "price": 13.0,
+   "note": "ขายยกแพ็ค 50 อัน, มีเบอร์ 1, 2, ความยาว 44.5 cm"
   },
   {
    "id": "1IDnf27R6ZFuYuKdWR4pntf70q_Vfa2ce",
@@ -14434,7 +14569,9 @@
    "sub": "",
    "new": false,
    "open": false,
-   "date": "2026-10-31"
+   "date": "2026-10-31",
+   "price": 18.0,
+   "note": "อันละ 18 บาท ขายยกแพ็ค 50 อัน มีเบอร์ 1"
   },
   {
    "id": "1Fie_b0oui8yAimwJYO1L31hQkb4qQzFI",
@@ -14448,7 +14585,9 @@
    "sub": "",
    "new": false,
    "open": false,
-   "date": "2026-10-31"
+   "date": "2026-10-31",
+   "price": 6.0,
+   "note": "ขายยกแพ็ค 50 อัน, ในแพ็คมีเบอร์ 1, 2, 3 (ขนาด 4.5/5/5.5 cm), ความยาว 31.6 cm"
   },
   {
    "id": "1B4DFMiHMd4Srd7rOXoxmeJcE0zz56nTz",
@@ -14462,7 +14601,9 @@
    "sub": "",
    "new": false,
    "open": false,
-   "date": "2026-10-31"
+   "date": "2026-10-31",
+   "price": 6.0,
+   "note": "ความยาว 21.5cm คละ 1,2,3 ในแพ็ค ขายแพ็ค 50 อัน"
   },
   {
    "id": "1zdu1RkUxJBBJmDFfVh-sBbP_TTYk8Clu",
@@ -14476,7 +14617,9 @@
    "sub": "",
    "new": false,
    "open": false,
-   "date": "2026-10-31"
+   "date": "2026-10-31",
+   "note": "ขนาด 38-45cm. ขายยกแพ็ค 30 อัน",
+   "retail": 13.0
   },
   {
    "id": "1y7XQLQtvRDw1ea3FLY2UHdwcpvuI9S39",
@@ -14490,7 +14633,9 @@
    "sub": "",
    "new": false,
    "open": false,
-   "date": "2026-10-31"
+   "date": "2026-10-31",
+   "price": 13.0,
+   "note": "ราคาส่ง 13 บาท ครอบคลุมทุกรุ่น (F1691 ยาว35cm, F1692 ยาว35cm, F1693 ยาว33cm, F1694 ยาว42cm)"
   },
   {
    "id": "1wWf5sfhN3-qLcrA87ZNyXfl1jR1DbsaT",
@@ -14504,7 +14649,9 @@
    "sub": "",
    "new": false,
    "open": false,
-   "date": "2026-10-31"
+   "date": "2026-10-31",
+   "price": 15.0,
+   "note": "ราคาส่งกล่อง 15 บาท คละไซส์ทุกใบ ขายยกกล่อง 20 อัน"
   },
   {
    "id": "12CwI5SJrwomOAU1z0xuWA95XyPt5EF6e",
@@ -14518,7 +14665,9 @@
    "sub": "",
    "new": false,
    "open": false,
-   "date": "2026-10-31"
+   "date": "2026-10-31",
+   "price": 11.0,
+   "note": "ขายยกแพ็ค 10 อัน"
   },
   {
    "id": "1ty04QlqxF2wweC93YLmDGvillPWbn19l",
@@ -14532,7 +14681,8 @@
    "sub": "",
    "new": false,
    "open": false,
-   "date": "2026-10-31"
+   "date": "2026-10-31",
+   "note": "ขนาด 12.6 cm, ขายยกแพ็ค 10 อัน, ไม่ระบุตัวเลขราคา"
   },
   {
    "id": "14ws9SpR3qPztZS2GRhuv2VGmmjGjCL-M",
@@ -14546,7 +14696,9 @@
    "sub": "",
    "new": false,
    "open": false,
-   "date": "2026-10-31"
+   "date": "2026-10-31",
+   "price": 17.0,
+   "note": "ขายยกแพ็ค 20 อัน"
   },
   {
    "id": "1errCkEwtcJ3xS9OTwJgwbWvHHMqozHJH",
@@ -14560,7 +14712,9 @@
    "sub": "",
    "new": false,
    "open": false,
-   "date": "2026-10-31"
+   "date": "2026-10-31",
+   "price": 15.0,
+   "note": "มีเบอร์ 2 (44 cm) และเบอร์ 3 (44.5 cm) คลุกกันในแพ็ค ขายยกแพ็ค 50 อัน"
   },
   {
    "id": "1Kvq5bn0x4_Ueu1yeAgsYTZL8rkMNSZ_h",
@@ -14574,7 +14728,9 @@
    "sub": "",
    "new": false,
    "open": false,
-   "date": "2026-10-31"
+   "date": "2026-10-31",
+   "price": 15.0,
+   "note": "ราคาส่งต่อกล่อง 15 บาท มีเบอร์ 1,2,3 แต่ละใบไม่เหมือนกัน ขายแยกกล่อง 20 อัน"
   },
   {
    "id": "1MTLcasG7zEf3FPNVsLwrxcckJoaog5PU",
@@ -14588,7 +14744,9 @@
    "sub": "",
    "new": false,
    "open": false,
-   "date": "2026-10-31"
+   "date": "2026-10-31",
+   "price": 11.0,
+   "note": "ราคาส่งกล่องละ 11 บาท มีเบอร์ 1,2,3 คละกันในแพ็ค ขายยกแพ็ค 20 อัน"
   },
   {
    "id": "1BYb6dGI9q400XC1E0jaYDUvWNnOr68XM",
@@ -14602,7 +14760,9 @@
    "sub": "",
    "new": false,
    "open": false,
-   "date": "2026-10-31"
+   "date": "2026-10-31",
+   "price": 15.0,
+   "note": "ราคาส่งอันละ 15 บาท (ราคาต่อชิ้น)"
   },
   {
    "id": "1Gp_kANaKV_qKOO4hiNakCw9uTniJZz2F",
@@ -14616,7 +14776,9 @@
    "sub": "",
    "new": false,
    "open": false,
-   "date": "2026-10-31"
+   "date": "2026-10-31",
+   "price": 15.0,
+   "note": "ราคาส่งต่อกล่อง 15 บาท กล่องละ 8 ตัว (มีเบอร์ 1,2,3) ขายแยกแพ็ค 20 อัน"
   },
   {
    "id": "1K9fotem_CkfkBWoP3ebZBp1h8t8_2tht",
@@ -14630,7 +14792,9 @@
    "sub": "",
    "new": false,
    "open": false,
-   "date": "2026-10-31"
+   "date": "2026-10-31",
+   "price": 15.0,
+   "note": "ขายยกแพ็ค 10 อัน"
   },
   {
    "id": "1uCno0SuMszoXqMfThCKmFr6Tmr3QfuGy",
@@ -14644,7 +14808,9 @@
    "sub": "",
    "new": false,
    "open": false,
-   "date": "2026-10-31"
+   "date": "2026-10-31",
+   "price": 15.0,
+   "note": "ราคาส่งกล่องละ 15 บาท (ขายยกแพ็ค 10 อัน)"
   },
   {
    "id": "1BA4C4QlVJomUFKD3YWZyyoPFLKuOZUWg",
@@ -14658,7 +14824,9 @@
    "sub": "",
    "new": false,
    "open": false,
-   "date": "2026-10-31"
+   "date": "2026-10-31",
+   "price": 15.0,
+   "note": "ราคาส่งกล่อง 15 บาท ขายแยกแพ็ค 10 อัน"
   },
   {
    "id": "1AADdihaU8ySq04zAmc8j5hWjLrG5zvas",
@@ -14672,7 +14840,9 @@
    "sub": "",
    "new": false,
    "open": false,
-   "date": "2026-10-31"
+   "date": "2026-10-31",
+   "price": 15.0,
+   "note": "ขายยกแพ็ค 10 อัน"
   },
   {
    "id": "1r5WGUYhKxEGVRFdo1uUCtHDXUsM5KPwA",
@@ -14686,7 +14856,9 @@
    "sub": "",
    "new": false,
    "open": false,
-   "date": "2026-10-31"
+   "date": "2026-10-31",
+   "price": 15.0,
+   "note": "ราคาส่งชิ้นละ 15 บาท ขายนอกแพ็ค 10 อัน"
   },
   {
    "id": "19lCzc3aknJUnyHaCBv4lIZqyfgq1tTy2",
@@ -14700,7 +14872,9 @@
    "sub": "",
    "new": false,
    "open": false,
-   "date": "2026-10-31"
+   "date": "2026-10-31",
+   "price": 15.0,
+   "note": "ราคาส่งอันละ 15 บาท จำนวนแพ็ค 10 อัน"
   },
   {
    "id": "1UjRLOYXxc3S6beJNE6kkybDjqQAw4qtJ",
@@ -14714,7 +14888,9 @@
    "sub": "",
    "new": false,
    "open": false,
-   "date": "2026-10-31"
+   "date": "2026-10-31",
+   "price": 15.0,
+   "note": "ราคาส่งต่อกล่อง (บรรจุ 10 อัน) ขายแยกแพ็ค 10 อัน ขนาด 8.7 cm"
   },
   {
    "id": "1Uisijof8rnuo8MVnRXYoeFaxUL8gDf0b",
@@ -14728,7 +14904,9 @@
    "sub": "",
    "new": false,
    "open": false,
-   "date": "2026-10-31"
+   "date": "2026-10-31",
+   "price": 15.0,
+   "note": "ราคาส่งกล่องละ 15 บาท ขายยกแพ็ค 10 อัน"
   },
   {
    "id": "1lB8w1E6PvWqgyhn6f5018QlA9D5zG9V8",
@@ -14742,7 +14920,9 @@
    "sub": "",
    "new": false,
    "open": false,
-   "date": "2026-10-31"
+   "date": "2026-10-31",
+   "price": 15.0,
+   "note": "ขายยกแพ็ค 10 อัน"
   },
   {
    "id": "1diaNudTWrZVt-UHlGV_mHxhY6M4Aq-gK",
@@ -14756,7 +14936,9 @@
    "sub": "",
    "new": false,
    "open": false,
-   "date": "2026-10-31"
+   "date": "2026-10-31",
+   "price": 1.5,
+   "note": "ราคาส่งกล่องละ 15 บาท (ขายยกกล่อง 10 อัน/กล่อง)"
   },
   {
    "id": "1V6WXOl4gaMKlYjdHZe58gYsdThu0tLMD",
@@ -14770,7 +14952,9 @@
    "sub": "",
    "new": false,
    "open": false,
-   "date": "2026-10-31"
+   "date": "2026-10-31",
+   "price": 15.0,
+   "note": "ราคาส่งขั้นต่ำ 15 บาท ขายยกแพ็ค 10 อัน"
   },
   {
    "id": "12vODaF4NGk15T3x8_TkvdgGg0aQz2s5h",
@@ -14784,7 +14968,9 @@
    "sub": "",
    "new": false,
    "open": false,
-   "date": "2026-10-31"
+   "date": "2026-10-31",
+   "price": 20.0,
+   "note": "ราคาอันละ 20 บาท ขายยกแพ็ค 20 อัน คละเบอร์ 1,2,3 ในแพ็คแล้ว (เบอร์ 1=47cm, เบอร์ 2=48cm, เบอร์ 3=49.9cm)"
   },
   {
    "id": "1AKfRPQRygcv1ze5zRWWo-H4q-j6tPHRP",
@@ -14798,7 +14984,9 @@
    "sub": "",
    "new": false,
    "open": false,
-   "date": "2026-10-31"
+   "date": "2026-10-31",
+   "note": "ราคาอันละ 20 บาท ขายยกแพ็ค 20 อัน คละเบอร์ 1,2,3 ในแพ็ค (เบอร์1=38.4cm, เบอร์2=38.8cm, เบอร์3=39.6cm)",
+   "retail": 20.0
   },
   {
    "id": "1X42eazQsRJ3b_svP6FQCzU5LkY9XEAPy",
@@ -14812,7 +15000,9 @@
    "sub": "",
    "new": false,
    "open": false,
-   "date": "2026-10-31"
+   "date": "2026-10-31",
+   "price": 15.0,
+   "note": "ราคาชิ้นละ 15 บาท ขายยกแพ็ค 20 อัน มีเบอร์ 1 (48.5 cm) และเบอร์ 2 (49 cm) คละกันในแพ็คแล้ว"
   },
   {
    "id": "1t2HdErV_uFBlxlLJL5pn_yrfog_jX9jA",
@@ -14826,7 +15016,9 @@
    "sub": "",
    "new": false,
    "open": false,
-   "date": "2026-10-31"
+   "date": "2026-10-31",
+   "price": 15.0,
+   "note": "ราคาอันละ 15 บาท ขายยกแพ็ค 20 อัน มีเบอร์ 1,2,3,4 คละกันในแพ็คเดียว (ขนาด 38.7/39.3/39.9/40.3 cm)"
   },
   {
    "id": "10gRiJBaLJR2Vu5PrQZH3K5FXHXIjKmqx",
@@ -14840,7 +15032,9 @@
    "sub": "",
    "new": false,
    "open": false,
-   "date": "2026-10-31"
+   "date": "2026-10-31",
+   "note": "ราคาต้นละ 20 บาท, ขายยกแพ็ค 20 อัน, ความยาว 47.8 cm",
+   "retail": 20.0
   },
   {
    "id": "1iDlE7felWpcfk4E-qBbDvd99somDDHx2",
@@ -14854,7 +15048,9 @@
    "sub": "",
    "new": false,
    "open": false,
-   "date": "2026-10-31"
+   "date": "2026-10-31",
+   "note": "ราคาอันละ 15 บาท, ขายยกแพ็ค 20 อัน, ความยาว 42 cm",
+   "retail": 15.0
   },
   {
    "id": "1Svpjz9vwQcAWa0kFM0g0X1683CG7E4Mz",
